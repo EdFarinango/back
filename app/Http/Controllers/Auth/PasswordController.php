@@ -35,7 +35,7 @@ class PasswordController extends Controller
 
     public function redirectReset(Request $request)
     {
-        $frontend_url = env('http://localhost:3000/confirmarCon');
+        $frontend_url = 'http://localhost:3000/confirmarCon';
         $token = $request->route('token');
         $email = $request->email;
         $url = "$frontend_url/?token=$token&email=$email";
