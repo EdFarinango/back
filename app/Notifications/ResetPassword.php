@@ -12,16 +12,18 @@ class ResetPassword extends Notification
 
     private string $token;
     private string $email;
+    private string $user_name;
 
     /**
      * Create a new notification instance.
      *
      * @param string $token
      */
-    public function __construct(string $token, string $email)
+    public function __construct(string $user_name, string $token, string $email)
     {
         $this->token = $token;
         $this->email = $email;
+        $this->user_name = $user_name;
     }
 
     /**
@@ -44,10 +46,11 @@ class ResetPassword extends Notification
     public function toMail( $notifiable ) {
         $link = route("password.reset", ["token" => $this->token, "email" => $this->email]);
         return ( new MailMessage )
-            ->greeting("Hola,")
-            ->subject( 'Restablecer contraseña')
-            ->line( "Recibes este correo electrónico porque hemos recibido una solicitud de restablecimiento de contraseña para tu cuenta.")
-            ->action( 'Restablecer ahora', $link)
+            ->greeting("Hola $this->user_name,")
+            ->subject( 'Notificación para restablecer tu contraseña')
+            ->line( 'Te enviamos este correo porque hemos recibido una solicitud de restablecimiento de contraseña para tu cuenta.')
+            ->line( 'Para restablecer tu contraseña has clic en el siguiente botón: ')
+            ->action( 'Restablecer contraseña', $link)
             ->line( 'Si no has solicitado el restablecimiento de tu contraseña puedes olvidar este mensaje.')
             ->line( 'Este enlace caducará en 60 minutos.');
     }

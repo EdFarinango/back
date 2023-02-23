@@ -36,7 +36,7 @@ class UserStoredNotification extends Notification
         $login_url = url('/login');
         return (new MailMessage)
             ->subject('Usuario registrado exitósamente.')
-            ->line("Bienvenido $this->user_name")
+            ->line("Bienvenid@ $this->user_name")
             ->line("Has sido registrado en el Portal de la Comisión Emprende")
             ->line("Detalles del registro: \n")
             ->line("\t\t• Tipo de usuario asignado: $this->tipoUsuario_name")
