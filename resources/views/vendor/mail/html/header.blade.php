@@ -12,7 +12,7 @@
 <img src="https://res.cloudinary.com/dm0qsdpr8/image/upload/v1676925274/emprende/Logo-EmPreNde---ESFOT_ftiitm.png" class="logo" height="70" width="90">
 
 @else
-{{ $slot }}
+<img src="https://res.cloudinary.com/dm0qsdpr8/image/upload/v1676925274/emprende/Logo-EmPreNde---ESFOT_ftiitm.png" class="logo" height="70" width="90">
 @endif
 </a>
 </td>
