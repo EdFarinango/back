@@ -52,7 +52,7 @@ class Emprendimiento extends Model
 
     public function getDefaultAvatarPath()
     {
-        return "https://cdn-icons-png.flaticon.com/512/711/711769.png";
+        return "https://cdn-icons-png.flaticon.com/512/1087/1087902.png";
     }
 
 
